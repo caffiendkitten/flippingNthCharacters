@@ -1,0 +1,23 @@
+function flipEveryNChars(string, n) {
+  var splitString = string.split('');
+  var flipped = '';
+  
+  while (splitString.length > 0) {
+    flipped += splitString.splice(0, n).reverse().join('');
+  }
+  return flipped;
+}
+
+function testFlip(actual, expected) {
+  if (actual === expected) {
+    console.log('passed');
+  } else {
+    console.log('FAILED');
+  }
+}
+
+var string = 'a short example'; 
+var actual = flipEveryNChars(string, 5);
+var expected = 'ohs axe trelpma';
+
+testFlip(actual, expected);
